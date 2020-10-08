@@ -5,10 +5,22 @@ const morgan = require("morgan");
 const app = express();
 app.use(cors());
 app.use(morgan("tiny"));
-app.get("/", (req, res) => {
+app.get("/old", (req, res) => {
   res.json({
     name: true,
-    status: "good"
+    status: "hjbjfj"
+  });
+});
+app.get("/new", (req, res) => {
+  res.json({
+    name: true,
+    status: "vgehr h"
+  });
+});
+app.get("/age", (req, res) => {
+  res.json({
+    name: true,
+    status: "ge ebnr"
   });
 });
 
