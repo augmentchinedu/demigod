@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
@@ -5,22 +6,27 @@ const morgan = require("morgan");
 const app = express();
 app.use(cors());
 app.use(morgan("tiny"));
-app.get("/old", (req, res) => {
+
+app.get("/a", (req, res) => {
   res.json({
-    name: true,
-    status: "hjbjfj"
+    name: "boss"
   });
 });
-app.get("/new", (req, res) => {
+app.get("/a/b", (req, res) => {
   res.json({
-    name: true,
-    status: "vgehr h"
+    name: "boss"
   });
 });
-app.get("/age", (req, res) => {
+app.get("/des", (req, res) => {
   res.json({
-    name: true,
-    status: "ge ebnr"
+    name: "boss"
+  });
+});
+
+app.use(express.static(path.join(__dirname, "client", "dist")));
+app.use("*", (req, res) => {
+  res.json({
+    status: "Not Found"
   });
 });
 

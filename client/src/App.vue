@@ -20,7 +20,9 @@
     },
     created() {
       axios
-        .get(`http://localhost:3000${window.location.pathname}`)
+        .get(
+          `${window.location.protocol}//${window.location.hostname}:3000${window.location.pathname}/`
+        )
         .then(res => {
           this.feed = res.data;
         });
