@@ -19,9 +19,10 @@
       };
     },
     created() {
+      console.log(process.env.NODE_ENV)
       axios
         .get(
-          `${window.location.protocol}//${window.location.hostname}:3000/api${window.location.pathname}/`
+          `${process.env.VUE_APP_HOST}/api${window.location.pathname}/why`
         )
         .then(res => {
           this.feed = res.data;
