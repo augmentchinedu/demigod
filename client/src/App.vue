@@ -21,7 +21,7 @@
     created() {
       axios
         .get(
-          `${window.location.protocol}//${window.location.hostname}:3000${window.location.pathname}/`
+          `${window.location.protocol}//${window.location.hostname}:3000/api${window.location.pathname}/`
         )
         .then(res => {
           this.feed = res.data;
