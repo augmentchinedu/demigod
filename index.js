@@ -11,6 +11,6 @@ app.use(morgan("tiny"));
 
 app.use(express.static(path.join(__dirname, "client", "dist")));
 
-app.listen(3001, () => {
+app.listen(config.app.port, () => {
   console.log(`Server Started @ Port ${config.app.port}`);
 });
