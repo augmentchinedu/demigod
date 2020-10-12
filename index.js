@@ -3,16 +3,11 @@ const path = require("path");
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
-const router = require("./routes/index");
 
 const app = express();
-const api = express();
 
 app.use(cors());
 app.use(morgan("tiny"));
-
-app.use("/api", api);
-api.use(router)
 
 app.use(express.static(path.join(__dirname, "client", "dist")));
 app.use("*", (req, res) => {

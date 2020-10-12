@@ -1,15 +1,20 @@
 const express = require("express");
 const router = express.Router();
 
-router.post("/why", (req, res) => {
+router.get("/why", (req, res) => {
   res.json({
     why: "bshs"
   });
 });
 
-router.post("/who", (req, res) => {
+router.get("/who", (req, res) => {
   res.json({
     why: "now"
+  });
+});
+router.get("*", (req, res) => {
+  res.json({
+    status: "Not Found"
   });
 });
 
