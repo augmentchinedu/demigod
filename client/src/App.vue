@@ -19,11 +19,9 @@
       };
     },
     created() {
-      console.log(process.env.NODE_ENV)
+      console.log(process.env.NODE_ENV);
       axios
-        .get(
-          `${process.env.VUE_APP_HOST}/api${window.location.pathname}/why`
-        )
+        .post(`${process.env.VUE_APP_HOST}/api${window.location.pathname}`)
         .then(res => {
           this.feed = res.data;
         });
