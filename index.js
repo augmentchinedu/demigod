@@ -10,10 +10,7 @@ app.use(cors());
 app.use(morgan("tiny"));
 
 app.use(express.static(path.join(__dirname, "client", "dist")));
-app.use("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
-});
 
-app.listen(config.app.port, () => {
+app.listen(3001, () => {
   console.log(`Server Started @ Port ${config.app.port}`);
 });
